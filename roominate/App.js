@@ -39,6 +39,7 @@ export default class App extends React.Component {
         // We include SpaceMono because we use it in HomeScreen.js. Feel free
         // to remove this if you are not using it in your app
         'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
+        'montserrat': require('./assets/fonts/Montserrat/Montserrat-Regular.ttf'),
       }),
     ]);
   };
@@ -58,5 +59,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    paddingTop: 24,
   },
 });

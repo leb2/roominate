@@ -1,14 +1,19 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
+
+import YourTasksScreen from '../screens/YourTasksScreen';
+import RoomTasksScreen from '../screens/RoomTasksScreen';
+
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import TaskScreen from "../screens/RoomTasksScreen";
 
 const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+  Home: YourTasksScreen,
+  Task: TaskScreen
 });
 
 HomeStack.navigationOptions = {
@@ -53,8 +58,9 @@ SettingsStack.navigationOptions = {
   ),
 };
 
-export default createBottomTabNavigator({
-  HomeStack,
-  LinksStack,
-  SettingsStack,
+export default createDrawerNavigator({
+  YourTasksScreen,
+  RoomTasksScreen,
+  // LinksStack,
+  // SettingsStack,
 });
