@@ -19,14 +19,14 @@ export default class Header extends React.Component {
   render() {
     return (
       <ElevatedView elevation={1} style={styles.outerContainer}>
-        <View style={styles.drawerIconContainer}>
-          <TouchableNativeFeedback onPress={() => this.props.clicked(this.props.task)}>
+        <TouchableNativeFeedback onPress={() => this.props.navigation.openDrawer()}>
+          <View style={styles.drawerIconContainer}>
             <Icon.Ionicons
               name={'md-list'}
               style={styles.icon}
             />
-          </TouchableNativeFeedback>
-        </View>
+          </View>
+        </TouchableNativeFeedback>
         <View style={styles.headerContainer}>
           <Text style={styles.headerText}>
             {this.props.name.toUpperCase()}
@@ -70,6 +70,9 @@ const styles = StyleSheet.create({
     position: 'relative',
     top: 16,
     left: -6
+  },
+  touchable: {
+    backgroundColor: 'green',
+    display: 'none'
   }
-
 });

@@ -28,7 +28,7 @@ export default class YourTasksScreen extends React.Component {
   render() {
     return (
       <View style={sharedStyles.screen}>
-        <Header name="your tasks"/>
+        <Header name="your tasks" navigation={this.props.navigation}/>
         <ScrollView style={[sharedStyles.container, sharedStyles.scrollView]}>
           <TaskList name={'tasks'} tasks={this.state.tasks}/>
           <TaskList name={'groceries'} tasks={this.state.groceries}/>
