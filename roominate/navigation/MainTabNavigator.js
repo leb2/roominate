@@ -9,14 +9,14 @@ import RoomTasksScreen from '../screens/RoomTasksScreen';
 
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-import TaskScreen from "../screens/RoomTasksScreen";
+import TaskScreen from "../screens/TaskScreen";
 
-const HomeStack = createStackNavigator({
+const YourTasksStack = createStackNavigator({
   Home: YourTasksScreen,
   Task: TaskScreen
 });
 
-HomeStack.navigationOptions = {
+YourTasksStack.navigationOptions = {
   tabBarLabel: 'Home',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -30,36 +30,8 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
-});
-
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
-    />
-  ),
-};
-
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
-});
-
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
-    />
-  ),
-};
-
 export default createDrawerNavigator({
-  YourTasksScreen,
+  YourTasksStack,
   RoomTasksScreen,
   // LinksStack,
   // SettingsStack,

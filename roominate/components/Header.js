@@ -14,15 +14,25 @@ export default class Header extends React.Component {
   constructor(props) {
     super();
     this.props = props;
+    this.isStack = props.isStack === undefined ? false : props.isStack;
+    this.iconName = props.isStack ? 'md-arrow-back' : 'md-list' ;
+  }
+
+  handleNavigationPress() {
+    if (this.isStack) {
+      this.props.navigation.goBack()
+    } else {
+      this.props.navigation.openDrawer();
+    }
   }
 
   render() {
     return (
       <ElevatedView elevation={1} style={styles.outerContainer}>
-        <TouchableNativeFeedback onPress={() => this.props.navigation.openDrawer()}>
+        <TouchableNativeFeedback onPress={() => this.handleNavigationPress()}>
           <View style={styles.drawerIconContainer}>
             <Icon.Ionicons
-              name={'md-list'}
+              name={this.iconName}
               style={styles.icon}
             />
           </View>

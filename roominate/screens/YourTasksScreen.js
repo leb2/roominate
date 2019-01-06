@@ -30,8 +30,8 @@ export default class YourTasksScreen extends React.Component {
       <View style={sharedStyles.screen}>
         <Header name="your tasks" navigation={this.props.navigation}/>
         <ScrollView style={[sharedStyles.container, sharedStyles.scrollView]}>
-          <TaskList name={'tasks'} tasks={this.state.tasks}/>
-          <TaskList name={'groceries'} tasks={this.state.groceries}/>
+          <TaskList name={'tasks'} tasks={this.state.tasks} navigation={this.props.navigation}/>
+          <TaskList name={'groceries'} tasks={this.state.groceries} navigation={this.props.navigation}/>
         </ScrollView>
       </View>
     );
