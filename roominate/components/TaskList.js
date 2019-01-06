@@ -37,31 +37,6 @@ export default class TaskList extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    alignSelf: 'center',
-    overflow: 'visible',
-  },
-  elevatedView: {
-    overflow: 'visible',
-    margin: 2,
-    marginBottom: 0,
-    marginTop: 0,
-    padding: 18,
-    fontSize: 14,
-    borderLeftWidth: 3,
-    borderLeftColor: '#666bc4',
-    // borderLeftColor: '#c0bcc4',
-    borderRadius: 2
-  },
-  name: {
-    color: '#555',
-    fontSize: 18,
-    marginBottom: 4
-  },
-  description: {
-    color: '#777',
-    fontSize: 11
-  },
   sectionHeader: {
     marginTop: 12,
     padding: 10,

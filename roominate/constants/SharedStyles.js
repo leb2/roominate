@@ -16,4 +16,7 @@ export const sharedStyles = StyleSheet.create({
     paddingRight: 20,
     paddingTop: 0
   },
+  whiteText: {
+    color: 'white'
+  }
 });
