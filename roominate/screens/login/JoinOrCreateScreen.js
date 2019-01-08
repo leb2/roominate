@@ -2,10 +2,12 @@ import React from 'react';import {
   Text,
   View,
   TouchableNativeFeedback,
-  StyleSheet
+  StyleSheet,
+  KeyboardAvoidingView
 } from 'react-native';
 import { sharedStyles } from '../../constants/SharedStyles';
 import ElevatedView from 'react-native-elevated-view';
+import ThemedButton from "../../components/ThemedButton";
 
 export default class JoinOrCreateScreen extends React.Component {
   constructor() {
@@ -28,7 +30,7 @@ export default class JoinOrCreateScreen extends React.Component {
 
   render() {
     return (
-      <View style={[sharedStyles.screen, styles.screen]}>
+      <KeyboardAvoidingView style={[sharedStyles.screen, styles.screen]} behavior="padding" enabled>
         <TouchableNativeFeedback styles={sharedStyles.container} onPress={() => this.handleJoinRoom()}>
           <ElevatedView elevation={1} style={[styles.button, styles.joinRoom]}>
             <Text style={styles.text}>
@@ -43,11 +45,10 @@ export default class JoinOrCreateScreen extends React.Component {
             </Text>
           </ElevatedView>
         </TouchableNativeFeedback>
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }
-
 
 const styles = StyleSheet.create({
   screen: {
@@ -81,8 +82,6 @@ const styles = StyleSheet.create({
     fontFamily: 'montserrat',
     fontWeight: '800'
   }
-
-
 });
 
 

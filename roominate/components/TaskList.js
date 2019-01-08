@@ -19,7 +19,6 @@ export default class TaskList extends React.Component {
     this.props.navigation.navigate('Task')
   }
 
-
   render() {
     let tasks = this.props.tasks;
     let name = this.props.name;

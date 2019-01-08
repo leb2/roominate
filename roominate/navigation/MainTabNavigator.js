@@ -32,6 +32,4 @@ YourTasksStack.navigationOptions = {
 export default createDrawerNavigator({
   YourTasksStack,
   RoomTasksScreen,
-  // LinksStack,
-  // SettingsStack,
 });

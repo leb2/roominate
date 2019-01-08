@@ -12,11 +12,18 @@ export const sharedStyles = StyleSheet.create({
     backgroundColor: '#f0f1f5'
   },
   scrollView: {
-    padding: 19,
-    paddingRight: 20,
+    padding: 20,
     paddingTop: 0
   },
   whiteText: {
     color: 'white'
+  },
+  buttonBar: {
+    alignSelf: 'stretch',
+    alignItems: 'flex-end',
+    marginTop: 6,
+  },
+  textInputContainer: {
+    marginTop: 30
   }
 });
