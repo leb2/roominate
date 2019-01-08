@@ -7,14 +7,15 @@ import {
 import { sharedStyles } from '../constants/SharedStyles';
 import Header from "../components/Header";
 import TaskList from "../components/TaskList";
+import stores from '../stores/RootStore';
 
 export default class YourTasksScreen extends React.Component {
   constructor() {
     super();
-    this.state = {
-      'tasks': [{name: 'Task1'}, {name: 'Task2'}],
-      'groceries': [{name: 'Groceries1'}, {name: 'Groceries2'}],
-    }
+    // this.state = {
+    //   'tasks': [{name: 'Task1'}, {name: 'Task2'}],
+    //   'groceries': [{name: 'Groceries1'}, {name: 'Groceries2'}],
+    // }
   }
 
   static navigationOptions = {
@@ -30,8 +31,8 @@ export default class YourTasksScreen extends React.Component {
       <View style={sharedStyles.screen}>
         <Header name="your tasks" navigation={this.props.navigation}/>
         <ScrollView style={[sharedStyles.container, sharedStyles.scrollView]}>
-          <TaskList name={'tasks'} tasks={this.state.tasks} navigation={this.props.navigation}/>
-          <TaskList name={'groceries'} tasks={this.state.groceries} navigation={this.props.navigation}/>
+          <TaskList name={'tasks'} tasks={stores.taskStore.tasks} navigation={this.props.navigation}/>
+          <TaskList name={'groceries'} tasks={stores.taskStore.tasks} navigation={this.props.navigation}/>
         </ScrollView>
       </View>
     );

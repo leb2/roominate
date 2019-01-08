@@ -7,8 +7,6 @@ import {
   View,
 } from 'react-native';
 import ElevatedView from 'react-native-elevated-view';
-import Colors from '../constants/Colors';
-import DrawerIcon from "./DrawerIcon";
 
 export default class Header extends React.Component {
   constructor(props) {

@@ -1,12 +1,9 @@
 import React from 'react';
 import {
-  Text,
   View,
-  TouchableNativeFeedback,
   StyleSheet
 } from 'react-native';
 import { sharedStyles } from '../../constants/SharedStyles';
-import ElevatedView from 'react-native-elevated-view';
 import Header from "../../components/Header";
 import ThemedTextInput from "../../components/ThemedTextInput";
 import ThemedButton from "../../components/ThemedButton";
@@ -25,6 +22,7 @@ export default class CreateRoomScreen extends React.Component {
 
   createRoom() {
     console.log(this.state.roomName);
+    this.props.navigation.navigate('Main')
   }
 
   render() {

@@ -2,15 +2,14 @@ import React from 'react';
 import { Platform, StatusBar, StyleSheet, View, AsyncStorage } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
+import rootStore from './stores/RootStore';
+import {observer} from "mobx-react";
 
+@observer
 export default class App extends React.Component {
-  state = {
-    isLoadingComplete: false,
-    userId: null,
-  };
-
   render() {
-    if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
+    if (!rootStore.viewStore.isLoadingComplete) {
+      console.log("not complete yet");
       return (
         <AppLoading
           startAsync={this._loadResourcesAsync}
@@ -19,9 +18,10 @@ export default class App extends React.Component {
         />
       );
     } else {
+      console.log("complete now");
       return (
         <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+          {Platform.OS === 'ios' && <StatusBar barStyle="default"/>}
           <AppNavigator />
         </View>
       );
@@ -31,7 +31,7 @@ export default class App extends React.Component {
   static async getUserId() {
     const userId = await AsyncStorage.getItem('USER_ID');
     if (userId !== null) {
-      return value;
+      return userId;
     } else {
       const id = '_' + Math.random().toString(36).substr(2, 9);
       await AsyncStorage.setItem('USER_ID', id);
@@ -39,11 +39,8 @@ export default class App extends React.Component {
     }
   }
 
-  async updateUserId() {
-    const userId = await App.getUserId();
-    this.setState({
-      userId: userId
-    });
+  static async updateUserId() {
+    rootStore.viewStore.userId = await App.getUserId();
   }
 
   _loadResourcesAsync = async () => {
@@ -59,7 +56,7 @@ export default class App extends React.Component {
         'montserrat': require('./assets/fonts/Montserrat/Montserrat-Regular.ttf'),
         'montserrat_bold': require('./assets/fonts/Montserrat/Montserrat-Bold.ttf'),
       }),
-      this.updateUserId()
+      App.updateUserId()
     ]);
   };
 
@@ -70,7 +67,7 @@ export default class App extends React.Component {
   };
 
   _handleFinishLoading = () => {
-    this.setState({ isLoadingComplete: true });
+    rootStore.viewStore.isLoadingComplete = true;
   };
 }
 

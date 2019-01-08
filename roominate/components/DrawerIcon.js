@@ -5,8 +5,6 @@ import {
   TouchableNativeFeedback,
 } from 'react-native';
 
-import Colors from '../constants/Colors';
-
 export default class DrawerIcon extends React.Component {
   constructor(props) {
     super();

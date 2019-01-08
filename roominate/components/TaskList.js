@@ -3,7 +3,6 @@ import {
   Text,
   View,
   StyleSheet,
-  TouchableNativeFeedback,
   FlatList,
 } from 'react-native';
 import TaskListItem from "./TaskListItem";
