@@ -5,6 +5,9 @@ import AppNavigator from './navigation/AppNavigator';
 import rootStore from './stores/RootStore';
 import {observer} from "mobx-react";
 
+let navigationPersistenceKey = null;
+// navigationPersistenceKey = __DEV__ ? "NavigationStateDEV" : null;
+
 @observer
 export default class App extends React.Component {
   render() {
@@ -22,7 +25,9 @@ export default class App extends React.Component {
       return (
         <View style={styles.container}>
           {Platform.OS === 'ios' && <StatusBar barStyle="default"/>}
-          <AppNavigator />
+          <AppNavigator
+            persistenceKey={navigationPersistenceKey}
+          />
         </View>
       );
     }

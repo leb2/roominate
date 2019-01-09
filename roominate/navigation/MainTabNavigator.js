@@ -7,14 +7,17 @@ import TabBarIcon from '../components/TabBarIcon';
 import YourTasksScreen from '../screens/YourTasksScreen';
 import RoomTasksScreen from '../screens/RoomTasksScreen';
 
-import SettingsScreen from '../screens/SettingsScreen';
 import TaskScreen from "../screens/TaskScreen";
+import AddTaskScreen from "../screens/AddTaskScreen";
+import SettingsScreen from "../screens/SettingsScreen";
 
 const YourTasksStack = createStackNavigator({
   Home: YourTasksScreen,
-  Task: TaskScreen
+  Task: TaskScreen,
+  AddTask: AddTaskScreen,
 });
 
+// TODO: change options for drawer
 YourTasksStack.navigationOptions = {
   tabBarLabel: 'Home',
   tabBarIcon: ({ focused }) => (
@@ -32,4 +35,5 @@ YourTasksStack.navigationOptions = {
 export default createDrawerNavigator({
   YourTasksStack,
   RoomTasksScreen,
+  SettingsScreen,
 });

@@ -15,7 +15,7 @@ export default class TaskList extends React.Component {
   }
 
   gotoTaskScreen(task) {
-    this.props.navigation.navigate('Task')
+    this.props.navigation.navigate('Task', {task: task})
   }
 
   render() {

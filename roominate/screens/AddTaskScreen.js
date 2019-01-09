@@ -9,7 +9,6 @@ export default class TaskScreen extends React.Component {
   constructor(props) {
     super();
     this.props = props;
-    this.task = this.props.navigation.getParam('task');
   }
 
   static navigationOptions = {
@@ -19,7 +18,7 @@ export default class TaskScreen extends React.Component {
   render() {
     return (
       <View style={sharedStyles.screen}>
-        <Header name={this.task.name} leftIconName={'md-arrow-back'}
+        <Header name={"New Task"} leftIconName={'md-arrow-back'}
                 leftHandler={() => this.props.navigation.goBack()}/>
       </View>
     );

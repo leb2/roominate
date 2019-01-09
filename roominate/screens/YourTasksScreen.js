@@ -12,26 +12,22 @@ import stores from '../stores/RootStore';
 export default class YourTasksScreen extends React.Component {
   constructor() {
     super();
-    // this.state = {
-    //   'tasks': [{name: 'Task1'}, {name: 'Task2'}],
-    //   'groceries': [{name: 'Groceries1'}, {name: 'Groceries2'}],
-    // }
   }
 
   static navigationOptions = {
     header: null,
+    title: 'Your Tasks'
   };
-
-  gotoTaskScreen(task) {
-    this.props.navigation.navigate('Task');
-  }
 
   render() {
     return (
       <View style={sharedStyles.screen}>
-        <Header name="your tasks" navigation={this.props.navigation}/>
+        <Header name="room tasks"
+                leftIconName={'md-list'} leftHandler={() => this.props.navigation.openDrawer()}
+                rightIconName={'md-add'} rightHandler={() => this.props.navigation.navigate('AddTask')}
+        />
         <ScrollView style={[sharedStyles.container, sharedStyles.scrollView]}>
-          <TaskList name={'tasks'} tasks={stores.taskStore.tasks} navigation={this.props.navigation}/>
+          <TaskList name={'chores'} tasks={stores.taskStore.tasks} navigation={this.props.navigation}/>
           <TaskList name={'groceries'} tasks={stores.taskStore.tasks} navigation={this.props.navigation}/>
         </ScrollView>
       </View>

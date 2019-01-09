@@ -9,7 +9,7 @@ export const sharedStyles = StyleSheet.create({
   },
   screen: {
     flex: 1,
-    backgroundColor: '#f0f1f5'
+    backgroundColor: '#f0f1f5',
   },
   scrollView: {
     padding: 20,

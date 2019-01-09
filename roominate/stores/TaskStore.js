@@ -22,6 +22,7 @@ export class TaskStore {
     this.addTask(new Task('Task 1'));
     this.addTask(new Task('Task 2'));
     this.addTask(new Task('Task 3'));
+    this.addTask(new Task('Task 4'));
   }
 
   addTask(task) {

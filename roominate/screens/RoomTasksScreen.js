@@ -23,13 +23,14 @@ export default class RoomTasksScreen extends React.Component {
   }
 
   static navigationOptions = {
-    header: null,
+    title: 'Room Tasks'
+    // header: null,
   };
 
   render() {
     return (
       <View style={sharedStyles.screen}>
-        <Header name="room tasks" navigation={this.props.navigation}/>
+        <Header name="room tasks" leftIconName={'md-list'} leftHandler={() => this.props.navigation.openDrawer()}/>
         <ScrollView style={[sharedStyles.container, sharedStyles.scrollView]}>
           <TaskList name={'tasks'} tasks={this.state.tasks}/>
           <TaskList name={'groceries'} tasks={this.state.groceries}/>
