@@ -21,7 +21,6 @@ export default class CreateRoomScreen extends React.Component {
   };
 
   createRoom() {
-    console.log(this.state.roomName);
     this.props.navigation.navigate('Main')
   }
 
@@ -30,11 +29,9 @@ export default class CreateRoomScreen extends React.Component {
       <View style={[sharedStyles.screen, styles.screen]}>
         <Header name={'create room'} isStack={true} navigation={this.props.navigation}/>
         <View style={sharedStyles.scrollView}>
-          <View style={[sharedStyles.textInputContainer]}>
-            <ThemedTextInput onChangeText={(roomName) => this.setState({roomName})}
-                             text={'Room name (optional):'}
-                             placeholder={'Room'}/>
-          </View>
+          <ThemedTextInput onChangeText={(roomName) => this.setState({roomName})}
+                           text={'Room name (optional):'}
+                           placeholder={'Room'}/>
           <View style={[sharedStyles.buttonBar]}>
             <ThemedButton text={'Create'} onPress={() => this.createRoom()}/>
           </View>

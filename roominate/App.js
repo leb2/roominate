@@ -12,7 +12,6 @@ let navigationPersistenceKey = null;
 export default class App extends React.Component {
   render() {
     if (!rootStore.viewStore.isLoadingComplete) {
-      console.log("not complete yet");
       return (
         <AppLoading
           startAsync={this._loadResourcesAsync}
@@ -21,7 +20,6 @@ export default class App extends React.Component {
         />
       );
     } else {
-      console.log("complete now");
       return (
         <View style={styles.container}>
           {Platform.OS === 'ios' && <StatusBar barStyle="default"/>}

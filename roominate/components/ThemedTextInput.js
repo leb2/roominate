@@ -29,6 +29,7 @@ export default class ThemedTextInput extends React.Component {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'flex-start',
+    marginTop: 30
   },
   textInput: {
     padding: 20,
@@ -48,5 +49,5 @@ const styles = StyleSheet.create({
     color: '#555',
     marginBottom: 8,
     marginLeft: 4,
-  }
+  },
 });

@@ -6,9 +6,11 @@ import {
   FlatList,
 } from 'react-native';
 import TaskListItem from "./TaskListItem";
+import {observer} from "../node_modules/mobx-react/custom";
+import {Observer} from "mobx-react";
 
+@observer
 export default class TaskList extends React.Component {
-
   constructor(props) {
     super();
     this.props = props;
@@ -19,7 +21,7 @@ export default class TaskList extends React.Component {
   }
 
   render() {
-    let tasks = this.props.tasks;
+    let tasks = this.props.tasks.slice();
     let name = this.props.name;
 
     return (
@@ -32,6 +34,7 @@ export default class TaskList extends React.Component {
       </View>
     );
   }
+
 }
 
 const styles = StyleSheet.create({

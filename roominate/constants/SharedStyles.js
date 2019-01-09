@@ -22,8 +22,5 @@ export const sharedStyles = StyleSheet.create({
     alignSelf: 'stretch',
     alignItems: 'flex-end',
     marginTop: 6,
-  },
-  textInputContainer: {
-    marginTop: 30
   }
 });
